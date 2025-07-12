@@ -367,6 +367,13 @@ quat_default = {
     "LE_joint": np.array([np.sqrt(2)/2, 0, -np.sqrt(2)/2, 0]),              # y, -90
 }
 
+def unify_quaternion_signs(q_seq):
+    # q_seq: (T, 4)
+    q_seq_fixed = q_seq.copy()
+    for i in range(1, len(q_seq)):
+        if np.dot(q_seq_fixed[i-1], q_seq_fixed[i]) < 0:
+            q_seq_fixed[i] = -q_seq_fixed[i]
+    return q_seq_fixed
 
 # 각 센서의 첫 상태(Stand)를 기준[1,0,0,0]으로 하고 이후 쿼터니언을 계산  
 def CalibrateIMU(trial):
@@ -430,6 +437,11 @@ def CalibrateIMU_2(trial):
     quat_raw["LS_joint"] = np.transpose(trial["imu9"])
     quat_raw["LE_joint"] = np.transpose(trial["imu10"])
 
+    # # --- 쿼터니언 부호 통일 ---
+    # for joint in quat_raw.keys():
+    #     quat_raw[joint] = unify_quaternion_signs(quat_raw[joint])
+    # # --- 쿼터니언 부호 통일 ---
+
     quat_corr = {
         "RH_joint": np.array([1, 0, 0, 0]),              # y, +90
         "RK_joint": np.array([1, 0, 0, 0]),              # y, +90
@@ -474,11 +486,110 @@ def CalibrateIMU_2(trial):
     trial["imu10"] = quat_fromBase["LE_joint"]
 
 
+def CalibrateIMU_3(trial):
+    quat_raw = {}
+    quat_raw["RH_joint"] = np.transpose(trial["imu1"])          # Make (4,T) -> (T,4)
+    quat_raw["RK_joint"] = np.transpose(trial["imu2"])
+    quat_raw["LH_joint"] = np.transpose(trial["imu3"])
+    quat_raw["LK_joint"] = np.transpose(trial["imu4"])
+    quat_raw["Pelvis"]   = np.transpose(trial["imu5"])
+    quat_raw["Trunk"]    = np.transpose(trial["imu6"])
+    quat_raw["RS_joint"] = np.transpose(trial["imu7"])
+    quat_raw["RE_joint"] = np.transpose(trial["imu8"])
+    quat_raw["LS_joint"] = np.transpose(trial["imu9"])
+    quat_raw["LE_joint"] = np.transpose(trial["imu10"])
 
+    # # --- 쿼터니언 부호 통일 ---
+    # for joint in quat_raw.keys():
+    #     quat_raw[joint] = unify_quaternion_signs(quat_raw[joint])
+    # # --- 쿼터니언 부호 통일 ---
 
+    quat_corr = {
+        "RH_joint": np.array([1, 0, 0, 0]),              # y, +90
+        "RK_joint": np.array([1, 0, 0, 0]),              # y, +90
+        "LH_joint": np.array([1, 0, 0, 0]),              # y, -90
+        "LK_joint": np.array([1, 0, 0, 0]),              # y, -90
+        "Pelvis":   np.array([1, 0, 0, 0]),              # Base
+        "Trunk":    np.array([1, 0, 0, 0]),              # y, +180
+        "RS_joint": np.array([1, 0, 0, 0]),              # y, +90
+        "RE_joint": np.array([1, 0, 0, 0]),              # y, +90
+        "LS_joint": np.array([1, 0, 0, 0]),              # y, -90
+        "LE_joint": np.array([1, 0, 0, 0]),              # y, -90
+    }
 
+    # quat_initial_base_inv = Quaternion.inverse(quat_raw["Pelvis"][0])
 
+    # # Base(Pelvis)를 기준으로 Stand 상태에서 Ideal한 쿼터니언 값이 나오도록 보정하는 correction term 계산
+    # for joint, _ in quat_corr.items():
+    #     quat_corr[joint] = Quaternion.multiply(quat_default[joint], Quaternion.inverse(Quaternion.multiply(quat_initial_base_inv, quat_raw[joint][0])))
 
+    # # Base(Pelvis)는 [1,0,0,0]으로 고정, 다른 joint들은 Base를 기준으로 측정된 쿼터니언 값으로 변환
+    # quat_fromBase = {}
+    # for joint, quatRaw in quat_raw.items():
+    #     q_fromBase_seq = []
+    #     for idx, q in enumerate(quatRaw):
+    #         q_fromBase = Quaternion.multiply(Quaternion.inverse(quat_raw["Pelvis"][idx]), q)
+    #         ### Correction Term ###
+    #         if (joint in quat_corr.keys()):
+    #             q_fromBase = Quaternion.multiply(quat_corr[joint], q_fromBase)
+
+    #         q_fromBase_seq.append(q_fromBase)
+    #     quat_fromBase[joint] = np.array(q_fromBase_seq)
+
+    trial["imu1"] = quat_raw["RH_joint"]
+    trial["imu2"] = quat_raw["RK_joint"]
+    trial["imu3"] = quat_raw["LH_joint"]
+    trial["imu4"] = quat_raw["LK_joint"]
+    trial["imu5"] = quat_raw["Pelvis"]
+    trial["imu6"] = quat_raw["Trunk"]
+    trial["imu7"] = quat_raw["RS_joint"]
+    trial["imu8"] = quat_raw["RE_joint"]
+    trial["imu9"] = quat_raw["LS_joint"]
+    trial["imu10"] = quat_raw["LE_joint"]
+
+def quat_to_euler(q):
+    """
+    q: (T, 4) ndarray, quaternion sequence [w, x, y, z]
+    return: (T, 3) ndarray, euler angles (roll, pitch, yaw) in radians
+    """
+    euler_seq = []
+    for quat in q:
+        w, x, y, z = quat
+        # Roll (x-axis rotation)
+        sinr_cosp = 2 * (w * x + y * z)
+        cosr_cosp = 1 - 2 * (x * x + y * y)
+        roll = np.arctan2(sinr_cosp, cosr_cosp)
+        # Pitch (y-axis rotation)
+        sinp = 2 * (w * y - z * x)
+        if abs(sinp) >= 1:
+            pitch = np.pi / 2 * np.sign(sinp)  # use 90 degrees if out of range
+        else:
+            pitch = np.arcsin(sinp)
+        # Yaw (z-axis rotation)
+        siny_cosp = 2 * (w * z + x * y)
+        cosy_cosp = 1 - 2 * (y * y + z * z)
+        yaw = np.arctan2(siny_cosp, cosy_cosp)
+        euler_seq.append([roll, pitch, yaw])
+    return np.array(euler_seq)
+
+def Quat2Euler(trial):
+    """
+    trial: dict with keys 'imu1' ~ 'imu10' (each: (T, 4))
+    return: dict with keys 'euler1' ~ 'euler10' (each: (T, 3))
+    """
+    trial_euler = {}
+    for i in range(1, 11):
+        key = f"imu{i}"
+        euler_key = f"euler{i}"
+        trial_euler[euler_key] = quat_to_euler(trial[key])
+    trial_euler['time'] = trial['time']
+    return trial_euler
+
+def CalibrateIMU_4(trial):
+    # 기존 CalibrateIMU_2 적용
+    CalibrateIMU_2(trial)
+    # 오일러 각 변환
+    return Quat2Euler(trial)
 
 ############################################################################################################################################
 ############################################################################################################################################
