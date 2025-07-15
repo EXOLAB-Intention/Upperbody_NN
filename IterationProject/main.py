@@ -71,6 +71,9 @@ def main():
         train_acc_list = {}
         val_acc_list = {}
         for idx, param in enumerate(param_list):
+            # Print Parameters
+            print(f"WindowSize: {param['WindowSize']}\nStride: {param['Stride']}\nLearning rate: {param['LearningRate']}\nDropout: {param['Dropout']}\nLSTM: {param['LSTM_units']}\nDense: {param['Dense_units']}\nBatchSize: {param['BatchSize']}\n\n")
+
             # Data Loading
             # all_trials = DataLoader(folder_paths=['../DataFile/data_250612', '../DataFile/data_250616', '../DataFile/data_250618'])
             # IMUCalibration(all_trials)
