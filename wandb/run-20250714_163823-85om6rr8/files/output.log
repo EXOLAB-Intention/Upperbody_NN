@@ -1,0 +1,31 @@
+Total 4 files are now loaded...
+Total 98 trials are completely loaded !!
+Total 5 files are now loaded...
+Total 145 trials are completely loaded !!
+Total 5 files are now loaded...
+Total 200 trials are completely loaded !!
+Total trials: 443
+Total trial number: 443
+Traceback (most recent call last):
+  File "C:\MinGW\Python_files\Lib\site-packages\wandb\sdk\wandb_config.py", line 165, in __getattr__
+    return self.__getitem__(key)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\MinGW\Python_files\Lib\site-packages\wandb\sdk\wandb_config.py", line 130, in __getitem__
+    return self._items[key]
+           ~~~~~~~~~~~^^^^^
+KeyError: 'windowSize'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\Users\INVINCIBLENESS\Documents\GitHub\Upperbody_NN\IterationProject\main.py", line 28, in <module>
+    main()
+  File "c:\Users\INVINCIBLENESS\Documents\GitHub\Upperbody_NN\IterationProject\main.py", line 14, in main
+    x_train, y_train_ohe, x_val, y_val_ohe, x_test, y_test_ohe = DataPreprocessing(all_trials, config)
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\INVINCIBLENESS\Documents\GitHub\Upperbody_NN\IterationProject\AdvancedFunction.py", line 91, in DataPreprocessing
+    windowSize = config.windowSize
+                 ^^^^^^^^^^^^^^^^^
+  File "C:\MinGW\Python_files\Lib\site-packages\wandb\sdk\wandb_config.py", line 167, in __getattr__
+    raise AttributeError(
+AttributeError: <class 'wandb.sdk.wandb_config.Config'> object has no attribute 'windowSize'

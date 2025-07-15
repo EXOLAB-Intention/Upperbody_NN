@@ -29,7 +29,7 @@ def Load_files(folder_path, pattern='cropped_*.h5'):
     all_trials = []
 
     file_list = sorted(glob.glob(os.path.join(folder_path, pattern)))
-    print(f"Total {len(file_list)} files are now loaded...")
+    print(f"{len(file_list)} files are now loaded...")
 
     for file_path in file_list:
         with h5py.File(file_path, "r") as f:
@@ -80,7 +80,7 @@ def Load_files(folder_path, pattern='cropped_*.h5'):
 
                 all_trials.append(trial_data)
 
-    print(f"Total {len(all_trials)} trials are completely loaded !!")
+    print(f"{len(all_trials)} trials are completely loaded !!")
     return all_trials
 
 

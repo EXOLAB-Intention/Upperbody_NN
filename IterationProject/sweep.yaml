@@ -1,0 +1,20 @@
+program: main.py
+method: grid
+metric:
+  name: val_loss
+  goal: minimize
+parameters:
+  windowSize:
+    values: [20]
+  stride:
+    values: [5]
+  learning_rate:
+    values: [0.001]
+  dropout_rate:
+    values: [0.2]
+  lstm_units:
+    values: [[16, 8]]
+  dense_units:
+    values: [[8]]
+  batch_size:
+    values: [64]

@@ -1,0 +1,55 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            of5kk753rspt834lz9b26wdibtzmzy0f:
+                codePath: IterationProject\main.py
+                codePathLocal: IterationProject\main.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "12.3"
+                disk:
+                    /:
+                        total: "1930020540416"
+                        used: "1125393940480"
+                email: invincibleone1227@gmail.com
+                executable: C:\MinGW\Python_files\python.exe
+                git:
+                    commit: 69d9c9bd4396f42d911f9a61a32797b29f18d468
+                    remote: https://github.com/EXOLAB-Intention/Upperbody_NN.git
+                gpu: NVIDIA GeForce RTX 3060 Laptop GPU
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 3840
+                      memoryTotal: "6442450944"
+                      name: NVIDIA GeForce RTX 3060 Laptop GPU
+                      uuid: GPU-5db32c81-54b3-a164-c194-af6169ebc48d
+                host: INVINCIBLE
+                memory:
+                    total: "16387297280"
+                os: Windows-10-10.0.26100-SP0
+                program: c:\Users\INVINCIBLENESS\Documents\GitHub\Upperbody_NN\IterationProject\main.py
+                python: CPython 3.11.2
+                root: C:\Users\INVINCIBLENESS\Documents\GitHub\Upperbody_NN
+                startedAt: "2025-07-14T14:38:23.142254Z"
+                writerId: of5kk753rspt834lz9b26wdibtzmzy0f
+        m: []
+        python_version: 3.11.2
+        t:
+            "1":
+                - 2
+                - 3
+                - 5
+                - 53
+            "2":
+                - 2
+                - 3
+                - 5
+                - 53
+            "4": 3.11.2
+            "5": 0.21.0
+            "8":
+                - 3
+            "12": 0.21.0
+            "13": windows-amd64
