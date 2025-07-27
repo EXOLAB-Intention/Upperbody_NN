@@ -8,12 +8,12 @@ import itertools
 ITERATION_MODE = 1          # Use Local Python
 
 if (ITERATION_MODE == 1):
-    parameters = {"WindowSize":     [20, 30, 40, 50],
-                  "Stride":         [1, 3, 5, 10],
-                  "LearningRate":   [0.0001, 0.001, 0.005],
-                  "Dropout":        [0.2, 0.3],
-                  "LSTM_units":     [[64, 32], [32, 16], [64], [32], [16]],
-                  "Dense_units":    [[32, 16], [32], [16]],
+    parameters = {"WindowSize":     [10, 30, 50],
+                  "Stride":         [1, 5],
+                  "LearningRate":   [0.001],
+                  "Dropout":        [0.2],
+                  "LSTM_units":     [[32], [64], [64, 32]],
+                  "Dense_units":    [[32]],
                   "BatchSize":      [64, 128]}
 
     # 1개 테스트용 코드
@@ -89,16 +89,16 @@ def main():
 
             # Save Accuracy
             train_acc_list[
-                f"window={param['WindowSize']}, stride={param['Stride']}, LR={param['LearningRate']}, Dropout={param['Dropout']}, LSTM_units={param['LSTM_units']}, Dense_units={param['Dense_units']}, BatchSize={param['BatchSize']}"] = max(history.history['accuracy'])
+                f"{idx}"] = max(history.history['accuracy'])
 
             val_acc_list[
-                f"window={param['WindowSize']}, stride={param['Stride']}, LR={param['LearningRate']}, Dropout={param['Dropout']}, LSTM_units={param['LSTM_units']}, Dense_units={param['Dense_units']}, BatchSize={param['BatchSize']}"] = max(history.history['val_accuracy'])
+                f"{idx}"] = max(history.history['val_accuracy'])
             
             # Result
-            PlotAccuracy(history, param, idx+1)
+            PlotAccuracy(history, param, idx+1 , max(history.history['accuracy']), max(history.history['val_accuracy']))
 
         ### Final HyperParameter Comparison
-        PlotHyperparamComparison(train_acc_list, val_acc_list)
+        (train_acc_list, val_acc_list)
 
 
 

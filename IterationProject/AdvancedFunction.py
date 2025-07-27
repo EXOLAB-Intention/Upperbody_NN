@@ -350,7 +350,7 @@ def DataPreprocessing2(all_trials, params):
     trial_keys = [(trial_data['file'], trial_data['trial']) for trial_data in all_trials]      # (filename, trial_number) 형태
     trial_dict = {k: t for k, t in zip(trial_keys, all_trials)}                                # {(filename, trial_number): trial_data, ...} 형태
     if (MODE == 0 or MODE == 3 or MODE == 4 or MODE == 7):
-        input_keys = ['emgL1_norm','emgL2_norm','emgL3_norm','emgL4_norm', 'emgR1_norm','emgR2_norm','emgR3_norm','emgR4_norm', 'imu1', 'imu2', 'imu3', 'imu4', 'imu5', 'imu6', 'imu7', 'imu8', 'imu9', 'imu10']
+        input_keys = ['emgL1_norm','emgL2_norm','emgL3_norm','emgL4_norm', 'emgR1_norm','emgR2_norm','emgR3_norm','emgR4_norm', 'imu1', 'imu2', 'imu3', 'imu4', 'imu6', 'imu7', 'imu8', 'imu9', 'imu10']
     elif (MODE == 1 or MODE == 5):
         input_keys = ['emgL1_norm','emgL2_norm', 'emgR1_norm','emgR2_norm', 'imu1', 'imu2', 'imu3', 'imu4', 'imu5', 'imu6']
     elif (MODE == 2 or MODE == 6):
@@ -360,7 +360,7 @@ def DataPreprocessing2(all_trials, params):
                     'imu1', 'imu2', 'imu3', 'imu4', 'imu5', 'imu6', 'imu7', 'imu8', 'imu9', 'imu10',
                     'imu1_vel', 'imu2_vel', 'imu3_vel', 'imu4_vel', 'imu5_vel', 'imu6_vel', 'imu7_vel', 'imu8_vel', 'imu9_vel', 'imu10_vel']
 
-    train_keys, val_keys, test_keys = split_trials_train_val_test(trial_keys, val_ratio=0.2, test_ratio=0.01)
+    train_keys, val_keys, test_keys = split_trials_train_val_test(trial_keys, val_ratio=0.1, test_ratio=0.01)
     # 해결: list of list → list of tuple로 변환   
     train_keys = [tuple(k) for k in train_keys]     
     val_keys = [tuple(k) for k in val_keys]
@@ -385,7 +385,7 @@ def DataPreprocessing2(all_trials, params):
 
 
 def TrainingModel(x_train, y_train, x_val, y_val, input_shape, num_classes, config):    
-    early_stop = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True, verbose=1)
+    # early_stop = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True, verbose=1)
 
     if (Model == 0):
         model = build_LSTM_classifier(
@@ -404,23 +404,23 @@ def TrainingModel(x_train, y_train, x_val, y_val, input_shape, num_classes, conf
     history = model.fit(
         x_train, y_train,
         validation_data=(x_val, y_val),
-        epochs=100,
+        epochs=30,
         batch_size=config.batch_size,
         # callbacks=[
         #     WandbMetricsLogger(),           # wandb에 metric 기록
         #     WandbModelCheckpoint("model")   # 모델 체크포인트 저장
         # ]
-        callbacks=[
-            early_stop,
-            # WandbCallback(log_graph=False) # 그래프 로깅(모델구조, 레이어, 연결 등) 비활성화 (이거 키면 안돌아감)
-        ]
+        # callbacks=[
+        #     early_stop,
+        #     # WandbCallback(log_graph=False) # 그래프 로깅(모델구조, 레이어, 연결 등) 비활성화 (이거 키면 안돌아감)
+        # ]
     )
 
     return model, history
 
 
 def TrainingModel2(x_train, y_train, x_val, y_val, input_shape, num_classes, params):    
-    early_stop = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True, verbose=1)
+    # early_stop = EarlyStopping(monitor='val_loss', patience=5, restore_best_weights=True, verbose=1)
 
     if (Model == 0):
         model = build_LSTM_classifier(
@@ -439,23 +439,23 @@ def TrainingModel2(x_train, y_train, x_val, y_val, input_shape, num_classes, par
     history = model.fit(
         x_train, y_train,
         validation_data=(x_val, y_val),
-        epochs=100,
+        epochs=30,
         batch_size=params["BatchSize"],
         # callbacks=[
         #     WandbMetricsLogger(),           # wandb에 metric 기록
         #     WandbModelCheckpoint("model")   # 모델 체크포인트 저장
         # ]
-        callbacks=[
-            early_stop,
-            # WandbCallback(log_graph=False) # 그래프 로깅(모델구조, 레이어, 연결 등) 비활성화 (이거 키면 안돌아감)
-        ]
+        # callbacks=[
+        #     early_stop,
+        #     # WandbCallback(log_graph=False) # 그래프 로깅(모델구조, 레이어, 연결 등) 비활성화 (이거 키면 안돌아감)
+        # ]
     )
 
     return model, history
 
 
 
-def PlotAccuracy(history, param, idx):
+def PlotAccuracy(history, param, idx, train_acc, val_acc):
     plt.figure()
     plt.plot(history.history['accuracy'], label='Train Acc')
     plt.plot(history.history['val_accuracy'], label='Val Acc')
@@ -465,6 +465,9 @@ def PlotAccuracy(history, param, idx):
     plt.grid(True)
     plt.title("Classification Accuracy")
 
+    training_acc = train_acc * 100
+    validation_acc = val_acc * 100
+
     # 설명 텍스트
     if param:
         info = (
@@ -473,7 +476,9 @@ def PlotAccuracy(history, param, idx):
             f"Window size: {param['WindowSize']}\n"
             f"Learning rate: {param['LearningRate']}\n"
             f"Dropout rate: {param['Dropout']}\n"
-            f"Batch size: {param['BatchSize']}"
+            f"Batch size: {param['BatchSize']}\n"
+            f"Training Accuracy; {training_acc}%\n"
+            f"Validation Accuracy; {validation_acc}%"
         )
 
         plt.text(
@@ -495,27 +500,34 @@ def PlotAccuracy(history, param, idx):
 
 
 def PlotHyperparamComparison(train_acc_list, val_acc_list):
+    # Training Accuracy
     train_acc_keys = list(train_acc_list.keys())
     train_acc_values = list(train_acc_list.values())
-    val_acc_keys = list(val_acc_list.keys())
-    val_acc_values = list(val_acc_list.values())
-
-    plt.figure()
-    plt.bar(train_acc_keys, train_acc_values)
-    plt.xlabel("Model")
+    x_train = np.arange(len(train_acc_keys)) * 2  # 간격을 넓히기 위해 *2
+    
+    plt.figure(figsize=(16, 8))
+    plt.bar(x_train, train_acc_values, width=1.0)
+    plt.xticks(x_train, train_acc_keys)  # tick 위치를 키에 맞춰서 다시 지정
+    plt.xlabel("Model index")
     plt.ylabel("Training Accuracy")
     plt.grid(axis='y', linestyle='--', alpha=0.5)
     plt.title("Training Accuracy Comparison")
     plt.tight_layout()
     plt.savefig(f"Result/Training/Training_acc_comparison.png", dpi=300)
-    plt.close()  # 저장 후 창 닫기 (메모리 절약)
+    plt.close()
 
-    plt.figure()
-    plt.bar(val_acc_keys, val_acc_values)
-    plt.xlabel("Model")
-    plt.ylabel("Training Accuracy")
+    # Validation Accuracy
+    val_acc_keys = list(val_acc_list.keys())
+    val_acc_values = list(val_acc_list.values())
+    x_val = np.arange(len(val_acc_keys)) * 2  # 간격 조정
+    
+    plt.figure(figsize=(16, 8))
+    plt.bar(x_val, val_acc_values, width=1.0)
+    plt.xticks(x_val, val_acc_keys)
+    plt.xlabel("Model index")
+    plt.ylabel("Validation Accuracy")  
     plt.grid(axis='y', linestyle='--', alpha=0.5)
     plt.title("Validation Accuracy Comparison")
     plt.tight_layout()
     plt.savefig(f"Result/Validation/Validation_acc_comparison.png", dpi=300)
-    plt.close()  # 저장 후 창 닫기 (메모리 절약)
+    plt.close()
