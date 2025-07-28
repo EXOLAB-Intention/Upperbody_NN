@@ -1,0 +1,71 @@
+(50, 8)
+/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/keras/src/layers/rnn/rnn.py:199: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+[1mModel: "sequential"[0m
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━┓
+┃[1m [0m[1mLayer (type)                        [0m[1m [0m┃[1m [0m[1mOutput Shape               [0m[1m [0m┃[1m [0m[1m        Param #[0m[1m [0m┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━┩
+│ lstm ([38;5;33mLSTM[0m)                          │ ([38;5;45mNone[0m, [38;5;34m50[0m, [38;5;34m64[0m)              │          [38;5;34m18,688[0m │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization                  │ ([38;5;45mNone[0m, [38;5;34m50[0m, [38;5;34m64[0m)              │             [38;5;34m256[0m │
+│ ([38;5;33mBatchNormalization[0m)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout ([38;5;33mDropout[0m)                    │ ([38;5;45mNone[0m, [38;5;34m50[0m, [38;5;34m64[0m)              │               [38;5;34m0[0m │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ lstm_1 ([38;5;33mLSTM[0m)                        │ ([38;5;45mNone[0m, [38;5;34m32[0m)                  │          [38;5;34m12,416[0m │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_1                │ ([38;5;45mNone[0m, [38;5;34m32[0m)                  │             [38;5;34m128[0m │
+│ ([38;5;33mBatchNormalization[0m)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_1 ([38;5;33mDropout[0m)                  │ ([38;5;45mNone[0m, [38;5;34m32[0m)                  │               [38;5;34m0[0m │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense ([38;5;33mDense[0m)                        │ ([38;5;45mNone[0m, [38;5;34m32[0m)                  │           [38;5;34m1,056[0m │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ batch_normalization_2                │ ([38;5;45mNone[0m, [38;5;34m32[0m)                  │             [38;5;34m128[0m │
+│ ([38;5;33mBatchNormalization[0m)                 │                             │                 │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dropout_2 ([38;5;33mDropout[0m)                  │ ([38;5;45mNone[0m, [38;5;34m32[0m)                  │               [38;5;34m0[0m │
+├──────────────────────────────────────┼─────────────────────────────┼─────────────────┤
+│ dense_1 ([38;5;33mDense[0m)                      │ ([38;5;45mNone[0m, [38;5;34m7[0m)                   │             [38;5;34m231[0m │
+└──────────────────────────────────────┴─────────────────────────────┴─────────────────┘
+[1m Total params: [0m[38;5;34m32,903[0m (128.53 KB)
+[1m Trainable params: [0m[38;5;34m32,647[0m (127.53 KB)
+[1m Non-trainable params: [0m[38;5;34m256[0m (1.00 KB)
+Traceback (most recent call last):
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/wandb/sdk/wandb_config.py", line 165, in __getattr__
+    return self.__getitem__(key)
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/wandb/sdk/wandb_config.py", line 130, in __getitem__
+    return self._items[key]
+KeyError: 'epochs'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 38, in <module>
+    main()
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 35, in main
+    model = train_model(X_train, y_train, X_val, y_val, input_shape, num_classes, config)
+  File "/Users/gunhee/Documents/GitHub/project/train.py", line 28, in train_model
+    epochs=config.epochs,
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/wandb/sdk/wandb_config.py", line 167, in __getattr__
+    raise AttributeError(
+AttributeError: <class 'wandb.sdk.wandb_config.Config'> object has no attribute 'epochs'
+Traceback (most recent call last):
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/wandb/sdk/wandb_config.py", line 165, in __getattr__
+    return self.__getitem__(key)
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/wandb/sdk/wandb_config.py", line 130, in __getitem__
+    return self._items[key]
+KeyError: 'epochs'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 38, in <module>
+    main()
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 35, in main
+    model = train_model(X_train, y_train, X_val, y_val, input_shape, num_classes, config)
+  File "/Users/gunhee/Documents/GitHub/project/train.py", line 28, in train_model
+    epochs=config.epochs,
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/wandb/sdk/wandb_config.py", line 167, in __getattr__
+    raise AttributeError(
+AttributeError: <class 'wandb.sdk.wandb_config.Config'> object has no attribute 'epochs'

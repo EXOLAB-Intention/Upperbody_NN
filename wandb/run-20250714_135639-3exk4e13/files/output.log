@@ -1,0 +1,30 @@
+(50, 8)
+/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/keras/src/layers/rnn/rnn.py:199: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(**kwargs)
+[34m[1mwandb[0m: [33mWARNING[0m WandbCallback is deprecated and will be removed in a future release. Please use the WandbMetricsLogger, WandbModelCheckpoint, and WandbEvalCallback callbacks instead. See https://docs.wandb.ai/guides/integrations/keras for more information.
+[34m[1mwandb[0m: [33mWARNING[0m The save_model argument by default saves the model in the HDF5 format that cannot save custom objects like subclassed models and custom layers. This behavior will be deprecated in a future release in favor of the SavedModel format. Meanwhile, the HDF5 model is saved as W&B files and the SavedModel as W&B Artifacts.
+Epoch 1/100
+Traceback (most recent call last):
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 38, in <module>
+    main()
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 35, in main
+    model = train_model(X_train, y_train, X_val, y_val, input_shape, num_classes, config)
+  File "/Users/gunhee/Documents/GitHub/project/train.py", line 20, in train_model
+    model.fit(
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/keras/src/backend/tensorflow/nn.py", line 669, in categorical_crossentropy
+    raise ValueError(
+ValueError: Arguments `target` and `output` must have the same shape. Received: target.shape=(None, 3), output.shape=(None, 7)
+Traceback (most recent call last):
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 38, in <module>
+    main()
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 35, in main
+    model = train_model(X_train, y_train, X_val, y_val, input_shape, num_classes, config)
+  File "/Users/gunhee/Documents/GitHub/project/train.py", line 20, in train_model
+    model.fit(
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/keras/src/utils/traceback_utils.py", line 122, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/keras/src/backend/tensorflow/nn.py", line 669, in categorical_crossentropy
+    raise ValueError(
+ValueError: Arguments `target` and `output` must have the same shape. Received: target.shape=(None, 3), output.shape=(None, 7)

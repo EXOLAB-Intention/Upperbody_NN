@@ -1,0 +1,19 @@
+{
+  "os":  "macOS-14.4.1-arm64-arm-64bit",
+  "python":  "CPython 3.10.16",
+  "startedAt":  "2025-07-13T15:56:16.836229Z",
+  "args":  [
+    "--batch_size=64",
+    "--dropout_rate=0.5",
+    "--learning_rate=0.0001",
+    "--lstm_units=[64, 32]"
+  ],
+  "program":  "/Users/gunhee/Documents/GitHub/project/main.py",
+  "codePath":  "main.py",
+  "codePathLocal":  "main.py",
+  "email":  "gh003008@naver.com",
+  "root":  "/Users/gunhee/Documents/GitHub/project",
+  "host":  "LeegunhcBookAir",
+  "executable":  "/Users/gunhee/miniforge3/envs/torch-mps/bin/python",
+  "writerId":  "sdqyugiamc23hug77zm3h7i6tjx8vzzn"
+}

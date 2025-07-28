@@ -1,0 +1,23 @@
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_setup.py:_flush():80] Current SDK version is 0.21.0
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_setup.py:_flush():80] Configure stats pid to 87529
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_setup.py:_flush():80] Loading settings from /Users/gunhee/.config/wandb/settings
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_setup.py:_flush():80] Loading settings from /Users/gunhee/Documents/GitHub/project/wandb/settings
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_init.py:setup_run_log_directory():703] Logging user logs to /Users/gunhee/Documents/GitHub/project/wandb/run-20250714_153137-e3lk537o/logs/debug.log
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to /Users/gunhee/Documents/GitHub/project/wandb/run-20250714_153137-e3lk537o/logs/debug-internal.log
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_init.py:init():830] calling init triggers
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_init.py:init():835] wandb.init called with sweep_config: {'batch_size': 128, 'dropout_rate': 0.5, 'learning_rate': 0.001, 'lstm_units': [64, 32]}
+config: {'_wandb': {}}
+2025-07-14 15:31:37,948 INFO    MainThread:87529 [wandb_init.py:init():871] starting backend
+2025-07-14 15:31:38,379 INFO    MainThread:87529 [wandb_init.py:init():874] sending inform_init request
+2025-07-14 15:31:38,396 INFO    MainThread:87529 [wandb_init.py:init():882] backend started and connected
+2025-07-14 15:31:38,399 INFO    MainThread:87529 [wandb_run.py:_config_callback():1363] config_cb None None {'batch_size': 128, 'dropout_rate': 0.5, 'learning_rate': 0.001, 'lstm_units': [64, 32]}
+2025-07-14 15:31:38,405 INFO    MainThread:87529 [wandb_init.py:init():953] updated telemetry
+2025-07-14 15:31:38,405 INFO    MainThread:87529 [wandb_init.py:init():977] communicating run to backend with 90.0 second timeout
+2025-07-14 15:31:39,197 INFO    MainThread:87529 [wandb_init.py:init():1029] starting run threads in backend
+2025-07-14 15:31:39,354 INFO    MainThread:87529 [wandb_run.py:_console_start():2458] atexit reg
+2025-07-14 15:31:39,355 INFO    MainThread:87529 [wandb_run.py:_redirect():2306] redirect: wrap_raw
+2025-07-14 15:31:39,355 INFO    MainThread:87529 [wandb_run.py:_redirect():2375] Wrapping output streams.
+2025-07-14 15:31:39,356 INFO    MainThread:87529 [wandb_run.py:_redirect():2398] Redirects installed.
+2025-07-14 15:31:39,360 INFO    MainThread:87529 [wandb_init.py:init():1075] run started, returning control to user process
+2025-07-14 15:34:01,442 INFO    MsgRouterThr:87529 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

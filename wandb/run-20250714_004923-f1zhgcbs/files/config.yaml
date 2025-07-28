@@ -1,0 +1,51 @@
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            k0sytmsyol3tjcmxe6d6wbwtd53fbb54:
+                args:
+                    - --batch_size=128
+                    - --dropout_rate=0.5
+                    - --learning_rate=0.0001
+                    - --lstm_units=[128, 64, 32]
+                codePath: main.py
+                codePathLocal: main.py
+                email: gh003008@naver.com
+                executable: /Users/gunhee/miniforge3/envs/torch-mps/bin/python
+                host: LeegunhcBookAir
+                os: macOS-14.4.1-arm64-arm-64bit
+                program: /Users/gunhee/Documents/GitHub/project/main.py
+                python: CPython 3.10.16
+                root: /Users/gunhee/Documents/GitHub/project
+                startedAt: "2025-07-13T22:49:23.079369Z"
+                writerId: k0sytmsyol3tjcmxe6d6wbwtd53fbb54
+        m: []
+        python_version: 3.10.16
+        t:
+            "1":
+                - 2
+                - 3
+                - 5
+                - 53
+            "2":
+                - 2
+                - 3
+                - 5
+                - 53
+            "3":
+                - 14
+            "4": 3.10.16
+            "5": 0.21.0
+            "12": 0.21.0
+            "13": darwin-arm64
+batch_size:
+    value: 128
+dropout_rate:
+    value: 0.5
+learning_rate:
+    value: 0.0001
+lstm_units:
+    value:
+        - 128
+        - 64
+        - 32

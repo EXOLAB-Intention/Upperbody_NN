@@ -1,0 +1,17 @@
+{"time":"2025-07-14T18:02:52.602217+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-14T18:02:53.047864+02:00","level":"INFO","msg":"stream: created new stream","id":"9aoqekkw"}
+{"time":"2025-07-14T18:02:53.047912+02:00","level":"INFO","msg":"stream: started","id":"9aoqekkw"}
+{"time":"2025-07-14T18:02:53.048113+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"9aoqekkw"}
+{"time":"2025-07-14T18:02:53.048384+02:00","level":"INFO","msg":"sender: started","stream_id":"9aoqekkw"}
+{"time":"2025-07-14T18:02:53.048499+02:00","level":"INFO","msg":"handler: started","stream_id":"9aoqekkw"}
+{"time":"2025-07-14T18:26:01.007443+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:58057->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T18:42:18.211732+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:58635->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T19:14:25.852577+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:58798->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T19:56:21.529845+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:59117->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T20:47:20.197362+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:59615->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T20:47:50.238006+02:00","level":"INFO","msg":"stream: closing","id":"9aoqekkw"}
+{"time":"2025-07-14T20:47:51.330462+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-14T20:47:51.689035+02:00","level":"INFO","msg":"sender: closed","stream_id":"9aoqekkw"}
+{"time":"2025-07-14T20:47:51.689174+02:00","level":"INFO","msg":"handler: closed","stream_id":"9aoqekkw"}
+{"time":"2025-07-14T20:47:51.689166+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"9aoqekkw"}
+{"time":"2025-07-14T20:47:51.689238+02:00","level":"INFO","msg":"stream: closed","id":"9aoqekkw"}

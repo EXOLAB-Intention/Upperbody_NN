@@ -1,0 +1,12 @@
+{"time":"2025-07-14T16:31:12.396892+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-14T16:31:12.827776+02:00","level":"INFO","msg":"stream: created new stream","id":"antvucpj"}
+{"time":"2025-07-14T16:31:12.827808+02:00","level":"INFO","msg":"stream: started","id":"antvucpj"}
+{"time":"2025-07-14T16:31:12.827999+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"antvucpj"}
+{"time":"2025-07-14T16:31:12.828268+02:00","level":"INFO","msg":"handler: started","stream_id":"antvucpj"}
+{"time":"2025-07-14T16:31:12.828344+02:00","level":"INFO","msg":"sender: started","stream_id":"antvucpj"}
+{"time":"2025-07-14T16:40:27.581284+02:00","level":"INFO","msg":"stream: closing","id":"antvucpj"}
+{"time":"2025-07-14T16:40:28.394088+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-14T16:40:28.763151+02:00","level":"INFO","msg":"sender: closed","stream_id":"antvucpj"}
+{"time":"2025-07-14T16:40:28.763244+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"antvucpj"}
+{"time":"2025-07-14T16:40:28.763262+02:00","level":"INFO","msg":"handler: closed","stream_id":"antvucpj"}
+{"time":"2025-07-14T16:40:28.763364+02:00","level":"INFO","msg":"stream: closed","id":"antvucpj"}

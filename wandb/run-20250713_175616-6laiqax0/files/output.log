@@ -1,0 +1,21 @@
+[34m[1mwandb[0m: [32m[41mERROR[0m You must call wandb.init() before wandb.config.dropout_rate
+Traceback (most recent call last):
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 29, in <module>
+    main()
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 26, in main
+    model = train_model(X_train, y_train, X_val, y_val, input_shape, num_classes, config)
+  File "/Users/gunhee/Documents/GitHub/project/train.py", line 15, in train_model
+    dropout_rate=config.dropout_rate,
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/wandb/sdk/lib/preinit.py", line 27, in __getattr__
+    raise wandb.Error(f"You must call wandb.init() before {self._name}.{key}")
+wandb.errors.errors.Error: You must call wandb.init() before wandb.config.dropout_rate
+Traceback (most recent call last):
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 29, in <module>
+    main()
+  File "/Users/gunhee/Documents/GitHub/project/main.py", line 26, in main
+    model = train_model(X_train, y_train, X_val, y_val, input_shape, num_classes, config)
+  File "/Users/gunhee/Documents/GitHub/project/train.py", line 15, in train_model
+    dropout_rate=config.dropout_rate,
+  File "/Users/gunhee/miniforge3/envs/torch-mps/lib/python3.10/site-packages/wandb/sdk/lib/preinit.py", line 27, in __getattr__
+    raise wandb.Error(f"You must call wandb.init() before {self._name}.{key}")
+wandb.errors.errors.Error: You must call wandb.init() before wandb.config.dropout_rate

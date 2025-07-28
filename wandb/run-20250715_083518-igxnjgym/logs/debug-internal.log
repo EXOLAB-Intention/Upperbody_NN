@@ -1,0 +1,29 @@
+{"time":"2025-07-15T08:35:19.178966+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-15T08:35:19.633198+02:00","level":"INFO","msg":"stream: created new stream","id":"igxnjgym"}
+{"time":"2025-07-15T08:35:19.633237+02:00","level":"INFO","msg":"stream: started","id":"igxnjgym"}
+{"time":"2025-07-15T08:35:19.633417+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"igxnjgym"}
+{"time":"2025-07-15T08:35:19.633673+02:00","level":"INFO","msg":"handler: started","stream_id":"igxnjgym"}
+{"time":"2025-07-15T08:35:19.63375+02:00","level":"INFO","msg":"sender: started","stream_id":"igxnjgym"}
+{"time":"2025-07-15T08:52:33.868375+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:52384->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-15T09:35:47.68524+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:52904->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-15T09:53:39.566235+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:53174->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-15T10:36:45.299355+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:53479->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-15T11:12:02.912526+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:54037->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-15T11:12:42.125784+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/igxnjgym/file_stream\": dial tcp 35.186.228.49:443: connect: operation timed out"}
+{"time":"2025-07-15T11:12:44.431958+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/igxnjgym/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:12:47.847256+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": net/http: request canceled (Client.Timeout exceeded while awaiting headers)"}
+{"time":"2025-07-15T11:29:01.666328+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/igxnjgym/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:29:02.731401+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:29:07.377228+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:29:11.378385+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/igxnjgym/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:29:25.920549+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:29:40.216511+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/igxnjgym/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:31:58.10843+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:32:34.32366+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/igxnjgym/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:34:48.6629+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/igxnjgym/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T11:38:10.460904+02:00","level":"INFO","msg":"stream: closing","id":"igxnjgym"}
+{"time":"2025-07-15T11:38:11.245301+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-15T11:38:11.463847+02:00","level":"INFO","msg":"sender: closed","stream_id":"igxnjgym"}
+{"time":"2025-07-15T11:38:11.463908+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"igxnjgym"}
+{"time":"2025-07-15T11:38:11.463915+02:00","level":"INFO","msg":"handler: closed","stream_id":"igxnjgym"}
+{"time":"2025-07-15T11:38:11.463977+02:00","level":"INFO","msg":"stream: closed","id":"igxnjgym"}

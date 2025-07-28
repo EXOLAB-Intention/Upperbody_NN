@@ -1,0 +1,19 @@
+{"time":"2025-07-14T20:53:42.014669+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-14T20:53:42.476831+02:00","level":"INFO","msg":"stream: created new stream","id":"wt9ae6la"}
+{"time":"2025-07-14T20:53:42.476867+02:00","level":"INFO","msg":"stream: started","id":"wt9ae6la"}
+{"time":"2025-07-14T20:53:42.477067+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"wt9ae6la"}
+{"time":"2025-07-14T20:53:42.477341+02:00","level":"INFO","msg":"handler: started","stream_id":"wt9ae6la"}
+{"time":"2025-07-14T20:53:42.47742+02:00","level":"INFO","msg":"sender: started","stream_id":"wt9ae6la"}
+{"time":"2025-07-14T21:08:42.399085+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:60003->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T21:26:09.411924+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:60192->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T22:15:46.521615+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:60393->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T22:52:13.492226+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:60925->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T23:10:18.341845+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/wt9ae6la/file_stream\": read tcp 192.168.1.119:61283->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-14T23:43:03.948056+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:61461->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-15T00:11:02.826989+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.119:61872->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-15T00:11:10.530455+02:00","level":"INFO","msg":"stream: closing","id":"wt9ae6la"}
+{"time":"2025-07-15T00:11:11.426664+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-15T00:11:11.819539+02:00","level":"INFO","msg":"sender: closed","stream_id":"wt9ae6la"}
+{"time":"2025-07-15T00:11:11.81961+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"wt9ae6la"}
+{"time":"2025-07-15T00:11:11.819611+02:00","level":"INFO","msg":"handler: closed","stream_id":"wt9ae6la"}
+{"time":"2025-07-15T00:11:11.819747+02:00","level":"INFO","msg":"stream: closed","id":"wt9ae6la"}

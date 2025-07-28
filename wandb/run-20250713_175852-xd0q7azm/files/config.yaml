@@ -1,0 +1,56 @@
+__doc__:
+    value: "Config object.\n\n    Config objects are intended to hold all of the hyperparameters associated\n    with a wandb run and are saved with the run object when `wandb.init` is\n    called.\n\n    We recommend setting the config once when initializing your run by passing\n    the `config` parameter to `init`:\n\n    ```\n    wandb.init(config=my_config_dict)\n    ```\n\n    You can create a file called `config-defaults.yaml`, and it will\n    automatically be loaded as each run's config. You can also pass the name\n    of the file as the `config` parameter to `init`:\n\n    ```\n    wandb.init(config=\"my_config.yaml\")\n    ```\n\n    See https://docs.wandb.com/guides/track/config#file-based-configs.\n\n    Examples:\n        Basic usage\n        ```\n        with wandb.init(config={\"epochs\": 4}) as run:\n            for x in range(run.config.epochs):\n                # train\n        ```\n\n        Nested values\n        ```\n        with wandb.init(config={\"train\": {\"epochs\": 4}}) as run:\n            for x in range(run.config[\"train\"][\"epochs\"]):\n                # train\n        ```\n\n        Using absl flags\n        ```\n        flags.DEFINE_string(\"model\", None, \"model to run\")  # name, default, help\n        with wandb.init() as run:\n            run.config.update(flags.FLAGS)  # adds all absl flags to config\n        ```\n\n        Argparse flags\n        ```python\n        with wandb.init(config={\"epochs\": 4}) as run:\n            parser = argparse.ArgumentParser()\n            parser.add_argument(\n                \"-b\",\n                \"--batch-size\",\n                type=int,\n                default=8,\n                metavar=\"N\",\n                help=\"input batch size for training (default: 8)\",\n            )\n            args = parser.parse_args()\n            run.config.update(args)\n        ```\n\n        Using TensorFlow flags (deprecated in tensorflow v2)\n        ```python\n        flags = tf.app.flags\n        flags.DEFINE_string(\"data_dir\", \"/tmp/data\")\n        flags.DEFINE_integer(\"batch_size\", 128, \"Batch size.\")\n\n        with wandb.init() as run:\n            run.config.update(flags.FLAGS)\n        ```\n    "
+_name:
+    value: wandb.config
+_wandb:
+    value:
+        cli_version: 0.21.0
+        e:
+            19cedxv631zqyimxhgewnplbixy8b5es:
+                args:
+                    - --batch_size=64
+                    - --dropout_rate=0.3
+                    - --learning_rate=0.001
+                    - --lstm_units=[128, 64, 32]
+                codePath: main.py
+                codePathLocal: main.py
+                email: gh003008@naver.com
+                executable: /Users/gunhee/miniforge3/envs/torch-mps/bin/python
+                host: LeegunhcBookAir
+                os: macOS-14.4.1-arm64-arm-64bit
+                program: /Users/gunhee/Documents/GitHub/project/main.py
+                python: CPython 3.10.16
+                root: /Users/gunhee/Documents/GitHub/project
+                startedAt: "2025-07-13T15:58:52.543430Z"
+                writerId: 19cedxv631zqyimxhgewnplbixy8b5es
+        m: []
+        python_version: 3.10.16
+        t:
+            "1":
+                - 2
+                - 3
+                - 5
+                - 53
+            "2":
+                - 2
+                - 3
+                - 5
+                - 53
+            "3":
+                - 14
+                - 16
+            "4": 3.10.16
+            "5": 0.21.0
+            "12": 0.21.0
+            "13": darwin-arm64
+batch_size:
+    value: 64
+dropout_rate:
+    value: 0.3
+learning_rate:
+    value: 0.001
+lstm_units:
+    value:
+        - 128
+        - 64
+        - 32

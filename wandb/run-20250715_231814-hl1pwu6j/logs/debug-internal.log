@@ -1,0 +1,36 @@
+{"time":"2025-07-15T23:18:14.642074+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-15T23:18:15.211774+02:00","level":"INFO","msg":"stream: created new stream","id":"hl1pwu6j"}
+{"time":"2025-07-15T23:18:15.211818+02:00","level":"INFO","msg":"stream: started","id":"hl1pwu6j"}
+{"time":"2025-07-15T23:18:15.212044+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"hl1pwu6j"}
+{"time":"2025-07-15T23:18:15.21211+02:00","level":"INFO","msg":"handler: started","stream_id":"hl1pwu6j"}
+{"time":"2025-07-15T23:18:15.212198+02:00","level":"INFO","msg":"sender: started","stream_id":"hl1pwu6j"}
+{"time":"2025-07-15T23:18:57.90025+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": EOF"}
+{"time":"2025-07-15T23:20:12.944525+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": read tcp 192.168.1.160:60482->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-15T23:20:25.347679+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": EOF"}
+{"time":"2025-07-15T23:21:12.196691+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": http2: client conn could not be established"}
+{"time":"2025-07-15T23:21:24.355043+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": unexpected EOF"}
+{"time":"2025-07-15T23:21:43.807011+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": http2: client conn could not be established"}
+{"time":"2025-07-15T23:22:06.896718+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": EOF"}
+{"time":"2025-07-15T23:22:52.366285+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": EOF"}
+{"time":"2025-07-15T23:24:56.742477+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": http2: client conn could not be established"}
+{"time":"2025-07-15T23:25:09.102315+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": unexpected EOF"}
+{"time":"2025-07-15T23:28:09.333436+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:28:11.80795+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:28:16.071691+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:28:25.636243+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:28:41.448495+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 192.168.1.160:60459->35.186.228.49:443: read: can't assign requested address"}
+{"time":"2025-07-15T23:28:43.866906+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:28:44.872606+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:28:47.944385+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:28:57.734245+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:29:17.142072+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:29:18.284451+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:29:53.519929+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:30:18.286347+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2025-07-15T23:32:19.283757+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/hl1pwu6j/file_stream\": EOF"}
+{"time":"2025-07-15T23:32:39.313753+02:00","level":"INFO","msg":"stream: closing","id":"hl1pwu6j"}
+{"time":"2025-07-15T23:32:58.112421+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-15T23:33:06.030158+02:00","level":"INFO","msg":"handler: closed","stream_id":"hl1pwu6j"}
+{"time":"2025-07-15T23:33:06.030216+02:00","level":"INFO","msg":"sender: closed","stream_id":"hl1pwu6j"}
+{"time":"2025-07-15T23:33:06.030273+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"hl1pwu6j"}
+{"time":"2025-07-15T23:33:06.031255+02:00","level":"INFO","msg":"stream: closed","id":"hl1pwu6j"}

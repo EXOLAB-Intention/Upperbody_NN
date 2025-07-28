@@ -1,0 +1,18 @@
+{"time":"2025-07-15T23:33:23.03442+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-15T23:33:24.158009+02:00","level":"INFO","msg":"stream: created new stream","id":"2gzece5p"}
+{"time":"2025-07-15T23:33:24.161736+02:00","level":"INFO","msg":"stream: started","id":"2gzece5p"}
+{"time":"2025-07-15T23:33:24.161953+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"2gzece5p"}
+{"time":"2025-07-15T23:33:24.162227+02:00","level":"INFO","msg":"handler: started","stream_id":"2gzece5p"}
+{"time":"2025-07-15T23:33:24.162309+02:00","level":"INFO","msg":"sender: started","stream_id":"2gzece5p"}
+{"time":"2025-07-15T23:34:11.664762+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/2gzece5p/file_stream\": read tcp 192.168.1.160:61046->35.186.228.49:443: read: operation timed out"}
+{"time":"2025-07-15T23:34:38.003602+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/2gzece5p/file_stream\": read tcp 192.168.1.160:61059->35.186.228.49:443: read: operation timed out"}
+{"time":"2025-07-15T23:35:21.865731+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/2gzece5p/file_stream\": http2: client conn could not be established"}
+{"time":"2025-07-15T23:35:41.134808+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/2gzece5p/file_stream\": http2: client conn could not be established"}
+{"time":"2025-07-15T23:35:42.995186+02:00","level":"INFO","msg":"stream: closing","id":"2gzece5p"}
+{"time":"2025-07-15T23:35:51.220466+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-15T23:36:07.899821+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/2gzece5p/file_stream\": read tcp 192.168.1.160:61079->35.186.228.49:443: read: connection reset by peer"}
+{"time":"2025-07-15T23:36:53.619755+02:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/gh003008-korea-advanced-institute-of-science-and-technology/uncategorized/2gzece5p/file_stream\": read tcp 192.168.1.160:61227->35.186.228.49:443: read: can't assign requested address"}
+{"time":"2025-07-15T23:37:10.590883+02:00","level":"INFO","msg":"sender: closed","stream_id":"2gzece5p"}
+{"time":"2025-07-15T23:37:10.590825+02:00","level":"INFO","msg":"handler: closed","stream_id":"2gzece5p"}
+{"time":"2025-07-15T23:37:10.590826+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"2gzece5p"}
+{"time":"2025-07-15T23:37:10.594305+02:00","level":"INFO","msg":"stream: closed","id":"2gzece5p"}

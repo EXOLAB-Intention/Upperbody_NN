@@ -1,0 +1,12 @@
+{"time":"2025-07-16T00:01:56.297883+02:00","level":"INFO","msg":"stream: starting","core version":"0.21.0"}
+{"time":"2025-07-16T00:01:56.695923+02:00","level":"INFO","msg":"stream: created new stream","id":"gqpynav3"}
+{"time":"2025-07-16T00:01:56.695952+02:00","level":"INFO","msg":"stream: started","id":"gqpynav3"}
+{"time":"2025-07-16T00:01:56.695957+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"gqpynav3"}
+{"time":"2025-07-16T00:01:56.695969+02:00","level":"INFO","msg":"sender: started","stream_id":"gqpynav3"}
+{"time":"2025-07-16T00:01:56.695988+02:00","level":"INFO","msg":"handler: started","stream_id":"gqpynav3"}
+{"time":"2025-07-16T00:05:19.093801+02:00","level":"INFO","msg":"stream: closing","id":"gqpynav3"}
+{"time":"2025-07-16T00:05:19.641238+02:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-07-16T00:05:20.027094+02:00","level":"INFO","msg":"handler: closed","stream_id":"gqpynav3"}
+{"time":"2025-07-16T00:05:20.027098+02:00","level":"INFO","msg":"writer: Close: closed","stream_id":"gqpynav3"}
+{"time":"2025-07-16T00:05:20.027131+02:00","level":"INFO","msg":"sender: closed","stream_id":"gqpynav3"}
+{"time":"2025-07-16T00:05:20.02721+02:00","level":"INFO","msg":"stream: closed","id":"gqpynav3"}
