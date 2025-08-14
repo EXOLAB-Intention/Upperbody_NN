@@ -1,0 +1,26 @@
+[EMG]
+1: Rectus Abdominis
+2: External Oblique
+3: Trapezius
+4: Posterior Deltoid
+
+R2가 스티커가 없는데 승모근에 붙였음
+R3가 TR이라 써있는데 외복사근(4)에 붙였음
+
+
+[IMU]
+5: pelvic
+6: Trunk
+7: R upperarm
+8: R forearm
+9: L upperarm
+10: L forearm
+
+
+
+[실험]
+1: Stand-to-sit인데 연습용
+sit-to-stand: 중간에 B버튼이후는 상체 기울어진 상태에서 한것임
+down: Stand-to-sit full version
+gait_init: gait initiation(왼발)(읏)
+final: left swing(읏) / 버튼 / full left swing / 버튼 / right swing(읏) / 버튼 / full right swing / 버튼 / gait termination(왼발)(읏) / 버튼 / gait termination full (왼발)
