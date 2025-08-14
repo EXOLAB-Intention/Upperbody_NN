@@ -324,3 +324,129 @@ phase_to_int = {
 
 
 
+
+# ----------------------------------------------------------------- IMU Algorithm ----------------------------------------------------------------- #
+# IMU1: Right Hip (RH)
+# IMU2: Right Knee (RK)
+# IMU3: Left Hip (LH)
+# IMU4: Left Knee (LK)
+# IMU5: Pelvis (PEL)
+# IMU6: Trunk (TR)
+# IMU7: Right Upperarm (RS)
+# IMU8: Right Forearm (RE)
+# IMU9: Left Upperarm (LS)
+# IMU10: Left Forearm (LE)
+
+
+# Quaternion Method 
+class Quaternion:
+    @staticmethod
+    def conjugate(q):
+        return np.array([q[0], -q[1], -q[2], -q[3]])
+    
+    @staticmethod
+    def inverse(q):
+        return np.array([q[0], -q[1], -q[2], -q[3]])
+
+    @staticmethod
+    def multiply(q1, q2):
+        w1, x1, y1, z1 = q1
+        w2, x2, y2, z2 = q2
+        return np.array([
+            w1*w2 - x1*x2 - y1*y2 - z1*z2,
+            w1*x2 + x1*w2 + y1*z2 - z1*y2,
+            w1*y2 - x1*z2 + y1*w2 + z1*x2,
+            w1*z2 + x1*y2 - y1*x2 + z1*w2
+        ])
+
+    @staticmethod
+    def to_rotmat(q):
+        w, x, y, z = q
+        return np.array([
+            [1 - 2*y**2 - 2*z**2,     2*x*y - 2*w*z,     2*x*z + 2*w*y],
+            [2*x*y + 2*w*z,     1 - 2*x**2 - 2*z**2,     2*y*z - 2*w*x],
+            [2*x*z - 2*w*y,     2*y*z + 2*w*x,     1 - 2*x**2 - 2*y**2]
+        ])
+    
+    @staticmethod
+    def to_rotmat_flatten_6D(q):        ### 1st and 2nd columns of Rotation matrix
+        w, x, y, z = q
+        return np.array(
+            [1 - 2*y**2 - 2*z**2,     2*x*y + 2*w*z,     2*x*z - 2*w*y,    2*x*y - 2*w*z,     1 - 2*x**2 - 2*z**2,     2*y*z + 2*w*x]
+        )
+    
+
+# Tpose에서 Ideal한 relative quaternion값
+quat_default_rel = {
+    "Pelvis":   np.array([1, 0, 0, 0]),                                     # Base
+    "Trunk":    np.array([0, 0, 1, 0]),                                     # y, +180
+    "RS_joint": np.array([0.5, 0.5, -0.5, 0.5]),                            # x, +90 / z, +90
+    "RE_joint": np.array([1, 0, 0, 0]),             
+    "LS_joint": np.array([0.5, 0.5, -0.5, -0.5]),                           # z, -90 / y, +90
+    "LE_joint": np.array([1, 0, 0, 0]),           
+}  
+
+quat_corr = {
+    "Pelvis":   np.array([1, 0, 0, 0]),              # Base
+    "Trunk":    np.array([1, 0, 0, 0]),            
+    "RS_joint": np.array([1, 0, 0, 0]),              
+    "RE_joint": np.array([1, 0, 0, 0]),            
+    "LS_joint": np.array([1, 0, 0, 0]),              
+    "LE_joint": np.array([1, 0, 0, 0]),             
+}
+
+prev_joint = {
+    "Pelvis":   "Pelvis",       # Base
+    "Trunk":    "Pelvis",
+    "RS_joint": "Trunk",
+    "RE_joint": "RS_joint",
+    "LS_joint": "Trunk",
+    "LE_joint": "LS_joint",
+}
+
+
+def GetCorrectionTermIMU(filePath):
+    with h5py.File(filePath, "r") as f:
+        trial = f['trial_1']
+        quat_raw_Tpose = {}
+        quat_raw_Tpose["Pelvis"]   = np.transpose(trial["imu5"])[0]       # Make (4,T) -> (T,4)
+        quat_raw_Tpose["Trunk"]    = np.transpose(trial["imu6"])[0]  
+        quat_raw_Tpose["RS_joint"] = np.transpose(trial["imu7"])[0]
+        quat_raw_Tpose["RE_joint"] = np.transpose(trial["imu8"])[0]
+        quat_raw_Tpose["LS_joint"] = np.transpose(trial["imu9"])[0]
+        quat_raw_Tpose["LE_joint"] = np.transpose(trial["imu10"])[0]
+
+    # Previous Joint를 기준으로 Stand(T-Pose)상태에서 Ideal한 쿼터니언 값이 나오도록 보정하는 correction term 계산
+    for joint, _ in quat_corr.items():
+        quat_corr[joint] = Quaternion.multiply(quat_default_rel[joint], Quaternion.inverse(Quaternion.multiply(Quaternion.inverse(quat_raw_Tpose[prev_joint[joint]]), quat_raw_Tpose[joint])))
+
+
+# Pelvis를 Base[1,0,0,0]로 잡고 prev_joint에 대한 상대 쿼터니언 적용
+def CalibrateIMU_3(trial):
+    quat_raw = {}
+    quat_raw["Pelvis"]   = np.transpose(trial["imu5"])   # Make (4,T) -> (T,4)
+    quat_raw["Trunk"]    = np.transpose(trial["imu6"])  
+    quat_raw["RS_joint"] = np.transpose(trial["imu7"])
+    quat_raw["RE_joint"] = np.transpose(trial["imu8"])
+    quat_raw["LS_joint"] = np.transpose(trial["imu9"])
+    quat_raw["LE_joint"] = np.transpose(trial["imu10"])
+
+    # Base(Pelvis)는 [1,0,0,0]으로 고정, 다른 joint들은 Previous Joint를 기준으로 측정된 상대 쿼터니언 값으로 변환
+    quat_rel = {}
+    for joint, quatRaw in quat_raw.items():
+        q_rel_seq = []
+        for idx, q in enumerate(quatRaw):
+            q_rel = Quaternion.multiply(Quaternion.inverse(quat_raw[prev_joint[joint]][idx]), q) 
+
+            ### Correction Term ###
+            if (joint in quat_corr.keys()):
+                q_rel = Quaternion.multiply(quat_corr[joint], q_rel)
+            q_rel_seq.append(q_rel)
+        quat_rel[joint] = np.array(q_rel_seq)
+
+    trial["imu5"] = quat_rel["Pelvis"]
+    trial["imu6"] = quat_rel["Trunk"]
+    trial["imu7"] = quat_rel["RS_joint"]
+    trial["imu8"] = quat_rel["RE_joint"]
+    trial["imu9"] = quat_rel["LS_joint"]
+    trial["imu10"] = quat_rel["LE_joint"]

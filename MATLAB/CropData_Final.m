@@ -124,12 +124,12 @@ for count = 1:size(ok_risings_LS,1)
     
     % --- APA --- %
     cropped_APA.time = data_time(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu5 = data_imu5(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu6 = data_imu6(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu7 = data_imu7(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu8 = data_imu8(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu9 = data_imu9(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu10 = data_imu10(start_APA_idx:stop_APA_idx,1);
+    cropped_APA.imu5 = data_imu5(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu6 = data_imu6(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu7 = data_imu7(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu8 = data_imu8(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu9 = data_imu9(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu10 = data_imu10(start_APA_idx:stop_APA_idx,:);
 
     cropped_APA.emgL1 = data_emgL1(start_APA_idx:stop_APA_idx,1);
     cropped_APA.emgL2 = data_emgL2(start_APA_idx:stop_APA_idx,1);
@@ -149,12 +149,12 @@ for count = 1:size(ok_risings_LS,1)
     
     % --- Steady State --- %
     cropped_STEADY.time = data_time(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu5 = data_imu5(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu6 = data_imu6(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu7 = data_imu7(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu8 = data_imu8(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu9 = data_imu9(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu10 = data_imu10(start_STEADY_idx:stop_STEADY_idx,1);
+    cropped_STEADY.imu5 = data_imu5(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu6 = data_imu6(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu7 = data_imu7(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu8 = data_imu8(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu9 = data_imu9(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu10 = data_imu10(start_STEADY_idx:stop_STEADY_idx,:);
 
     cropped_STEADY.emgL1 = data_emgL1(start_STEADY_idx:stop_STEADY_idx,1);
     cropped_STEADY.emgL2 = data_emgL2(start_STEADY_idx:stop_STEADY_idx,1);
@@ -241,12 +241,12 @@ for count = 1:size(ok_risings_RS,1)
     
     % --- APA --- %
     cropped_APA.time = data_time(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu5 = data_imu5(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu6 = data_imu6(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu7 = data_imu7(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu8 = data_imu8(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu9 = data_imu9(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu10 = data_imu10(start_APA_idx:stop_APA_idx,1);
+    cropped_APA.imu5 = data_imu5(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu6 = data_imu6(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu7 = data_imu7(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu8 = data_imu8(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu9 = data_imu9(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu10 = data_imu10(start_APA_idx:stop_APA_idx,:);
 
     cropped_APA.emgL1 = data_emgL1(start_APA_idx:stop_APA_idx,1);
     cropped_APA.emgL2 = data_emgL2(start_APA_idx:stop_APA_idx,1);
@@ -266,12 +266,12 @@ for count = 1:size(ok_risings_RS,1)
     
     % --- Steady State --- %
     cropped_STEADY.time = data_time(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu5 = data_imu5(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu6 = data_imu6(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu7 = data_imu7(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu8 = data_imu8(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu9 = data_imu9(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu10 = data_imu10(start_STEADY_idx:stop_STEADY_idx,1);
+    cropped_STEADY.imu5 = data_imu5(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu6 = data_imu6(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu7 = data_imu7(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu8 = data_imu8(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu9 = data_imu9(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu10 = data_imu10(start_STEADY_idx:stop_STEADY_idx,:);
 
     cropped_STEADY.emgL1 = data_emgL1(start_STEADY_idx:stop_STEADY_idx,1);
     cropped_STEADY.emgL2 = data_emgL2(start_STEADY_idx:stop_STEADY_idx,1);
@@ -358,12 +358,12 @@ for count = 1:size(ok_risings_GT,1)
     
     % --- APA --- %
     cropped_APA.time = data_time(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu5 = data_imu5(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu6 = data_imu6(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu7 = data_imu7(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu8 = data_imu8(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu9 = data_imu9(start_APA_idx:stop_APA_idx,1);
-    cropped_APA.imu10 = data_imu10(start_APA_idx:stop_APA_idx,1);
+    cropped_APA.imu5 = data_imu5(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu6 = data_imu6(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu7 = data_imu7(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu8 = data_imu8(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu9 = data_imu9(start_APA_idx:stop_APA_idx,:);
+    cropped_APA.imu10 = data_imu10(start_APA_idx:stop_APA_idx,:);
 
     cropped_APA.emgL1 = data_emgL1(start_APA_idx:stop_APA_idx,1);
     cropped_APA.emgL2 = data_emgL2(start_APA_idx:stop_APA_idx,1);
@@ -383,12 +383,12 @@ for count = 1:size(ok_risings_GT,1)
     
     % --- Steady State --- %
     cropped_STEADY.time = data_time(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu5 = data_imu5(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu6 = data_imu6(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu7 = data_imu7(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu8 = data_imu8(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu9 = data_imu9(start_STEADY_idx:stop_STEADY_idx,1);
-    cropped_STEADY.imu10 = data_imu10(start_STEADY_idx:stop_STEADY_idx,1);
+    cropped_STEADY.imu5 = data_imu5(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu6 = data_imu6(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu7 = data_imu7(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu8 = data_imu8(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu9 = data_imu9(start_STEADY_idx:stop_STEADY_idx,:);
+    cropped_STEADY.imu10 = data_imu10(start_STEADY_idx:stop_STEADY_idx,:);
 
     cropped_STEADY.emgL1 = data_emgL1(start_STEADY_idx:stop_STEADY_idx,1);
     cropped_STEADY.emgL2 = data_emgL2(start_STEADY_idx:stop_STEADY_idx,1);
