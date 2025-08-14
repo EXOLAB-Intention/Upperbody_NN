@@ -175,7 +175,7 @@ disp('Finish Appending');
 
 
 % For APA
-cropped_APA_filename = ['cropped_APA_', 'LeftSwing'];
+cropped_APA_filename = ['cropped_APA_', 'LeftSwing.h5'];
 for i = 1:length(cropped_APA_data)
     trial = cropped_APA_data{i};
     group_prefix = sprintf('/trial_%d', i);
@@ -200,7 +200,7 @@ disp('APA File is created');
 
 
 % For Steady State
-cropped_STEADY_filename = ['cropped_STEADY_', 'LeftSwing'];
+cropped_STEADY_filename = ['cropped_STEADY_', 'LeftSwing.h5'];
 for i = 1:length(cropped_STEADY_data)
     trial = cropped_STEADY_data{i};
     group_prefix = sprintf('/trial_%d', i);
@@ -292,7 +292,7 @@ disp('Finish Appending');
 
 
 % For APA
-cropped_APA_filename = ['cropped_APA_', 'RightSwing'];
+cropped_APA_filename = ['cropped_APA_', 'RightSwing.h5'];
 for i = 1:length(cropped_APA_data)
     trial = cropped_APA_data{i};
     group_prefix = sprintf('/trial_%d', i);
@@ -317,7 +317,7 @@ disp('APA File is created');
 
 
 % For Steady State
-cropped_STEADY_filename = ['cropped_STEADY_', 'RightSwing'];
+cropped_STEADY_filename = ['cropped_STEADY_', 'RightSwing.h5'];
 for i = 1:length(cropped_STEADY_data)
     trial = cropped_STEADY_data{i};
     group_prefix = sprintf('/trial_%d', i);
@@ -409,7 +409,7 @@ disp('Finish Appending');
 
 
 % For APA
-cropped_APA_filename = ['cropped_APA_', 'GaitTermination'];
+cropped_APA_filename = ['cropped_APA_', 'GaitTermination.h5'];
 for i = 1:length(cropped_APA_data)
     trial = cropped_APA_data{i};
     group_prefix = sprintf('/trial_%d', i);
@@ -434,7 +434,7 @@ disp('APA File is created');
 
 
 % For Steady State
-cropped_STEADY_filename = ['cropped_STEADY_', 'GaitTermination'];
+cropped_STEADY_filename = ['cropped_STEADY_', 'GaitTermination.h5'];
 for i = 1:length(cropped_STEADY_data)
     trial = cropped_STEADY_data{i};
     group_prefix = sprintf('/trial_%d', i);
