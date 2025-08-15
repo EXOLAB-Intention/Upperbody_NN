@@ -4,14 +4,14 @@ import itertools
 import os
 
 
-parameters = {"WindowSize":       [10, 30, 50, 80],
-                "Stride":         [1, 5],
+parameters = {"WindowSize":       [50, 90],
+                "Stride":         [1],
                 "LearningRate":   [0.001],
                 "Dropout":        [0.2],
                 "LSTM_units":     [[16], [32], [64], [32, 16], [64, 32], [64, 32, 16]],
-                "Dense_units":    [[16], [32], [64]],
-                "Epoch":          [10, 15, 20],  
-                "BatchSize":      [16, 32, 64, 128]}
+                "Dense_units":    [[16], [32], [64], [32, 16], [64, 32]],
+                "Epoch":          [5, 10],  
+                "BatchSize":      [16, 256]}
 
 # 파라미터 이름과 값 목록 분리
 param_keys = list(parameters.keys())
@@ -60,7 +60,7 @@ def main():
         # Model
         print(
             f"\n[Index]: {idx}\n"
-            f"Parameters:\n"
+            f"[Parameters]\n"
             f"  WindowSize: {param['WindowSize']}\n"
             f"  Stride: {param['Stride']}\n"
             f"  LSTM Layer: {param['LSTM_units']}\n"
