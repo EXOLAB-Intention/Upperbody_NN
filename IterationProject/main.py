@@ -29,8 +29,8 @@ for combo in all_combinations:
 print(f"총 조합 수: {len(param_list)}")
 
 # TXT 파일로 파라미터 저장
-os.makedirs("/IterationProject/Result", exist_ok=True)
-with open("/IterationProject/Result/params_list.txt", "w", encoding="utf-8") as f:
+os.makedirs("IterationProject/Result", exist_ok=True)
+with open("IterationProject/Result/params_list.txt", "w", encoding="utf-8") as f:
     for idx, params in enumerate(param_list, start=1):
         f.write(f"#{idx} - {params}\n")
 
