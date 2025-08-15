@@ -1,6 +1,7 @@
 from iterFunction import *
 from Model import *
 import itertools
+import os
 
 
 parameters = {"WindowSize":       [10, 30, 50, 80],
@@ -28,6 +29,7 @@ for combo in all_combinations:
 print(f"총 조합 수: {len(param_list)}")
 
 # TXT 파일로 파라미터 저장
+os.makedirs("/IterationProject/Result", exist_ok=True)
 with open("/IterationProject/Result/params_list.txt", "w", encoding="utf-8") as f:
     for idx, params in enumerate(param_list, start=1):
         f.write(f"#{idx} - {params}\n")
@@ -57,7 +59,7 @@ def main():
 
         # Model
         print(
-            f"\n[Index]: {idx}"
+            f"\n[Index]: {idx}\n"
             f"Parameters:\n"
             f"  WindowSize: {param['WindowSize']}\n"
             f"  Stride: {param['Stride']}\n"
