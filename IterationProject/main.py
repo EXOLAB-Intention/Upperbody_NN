@@ -9,7 +9,7 @@ parameters = {"WindowSize":       [10, 30, 50, 80],
                 "Dropout":        [0.2],
                 "LSTM_units":     [[16], [32], [64], [32, 16], [64, 32], [64, 32, 16]],
                 "Dense_units":    [[16], [32], [64]],
-                "Epoch":          [10, 20],  
+                "Epoch":          [10, 15, 20],  
                 "BatchSize":      [16, 32, 64, 128]}
 
 # 파라미터 이름과 값 목록 분리
@@ -26,6 +26,11 @@ for combo in all_combinations:
     if params["Dense_units"][0] <= params["LSTM_units"][-1]:
         param_list.append(params)
 print(f"총 조합 수: {len(param_list)}")
+
+# TXT 파일로 파라미터 저장
+with open("/IterationProject/Result/params_list.txt", "w", encoding="utf-8") as f:
+    for idx, params in enumerate(param_list, start=1):
+        f.write(f"#{idx} - {params}\n")
 
 ### Data Loading
 all_DS = DataLoader(folder_paths=['DataFile/250813'])
@@ -52,7 +57,8 @@ def main():
 
         # Model
         print(
-            f"\nParameters:\n"
+            f"\n[Index]: {idx}"
+            f"Parameters:\n"
             f"  WindowSize: {param['WindowSize']}\n"
             f"  Stride: {param['Stride']}\n"
             f"  LSTM Layer: {param['LSTM_units']}\n"
@@ -75,7 +81,7 @@ def main():
         PlotAccuracy(history, param, idx+1 , max(history.history['accuracy']), max(history.history['val_accuracy']))
 
     ### Final HyperParameter Comparison
-    PlotHyperparamComparison(train_acc_list, val_acc_list)
+    PlotHyperparamComparison(train_acc_list, val_acc_list, chunk_size=30)
 
 
 

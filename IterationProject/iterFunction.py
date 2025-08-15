@@ -268,37 +268,70 @@ def PlotAccuracy(history, param, idx, train_acc, val_acc):
 
 
 
-def PlotHyperparamComparison(train_acc_list, val_acc_list):
-    # Training Accuracy
-    train_acc_keys = list(train_acc_list.keys())
-    train_acc_values = list(train_acc_list.values())
-    x_train = np.arange(len(train_acc_keys)) * 2  # 간격을 넓히기 위해 *2
-    
-    plt.figure(figsize=(16, 8))
-    plt.bar(x_train, train_acc_values, width=1.0)
-    plt.xticks(x_train, train_acc_keys)  # tick 위치를 키에 맞춰서 다시 지정
-    plt.xlabel("Model index")
-    plt.ylabel("Training Accuracy")
-    plt.grid(axis='y', linestyle='--', alpha=0.5)
-    plt.title("Training Accuracy Comparison")
-    plt.tight_layout()
-    os.makedirs("IterationProject/Result/Training", exist_ok=True)  # 폴더 없으면 생성
-    plt.savefig(f"IterationProject/Result/Training/Training_acc_comparison.png", dpi=300)
-    plt.close()
+def PlotHyperparamComparison(train_acc_list, val_acc_list, chunk_size=30):
+    """
+    train_acc_list, val_acc_list : {global_idx: accuracy} 형태의 dict (동일 순서 가정)
+    chunk_size : 파트당 막대 개수
+    """
+    # 0) 키 순서: 정렬/집합 X, 그대로 사용
+    keys = list(train_acc_list.keys())
+    # (안전망) val 키 순서가 다르면 경고만 출력하고, 교집합 기준으로 맞춥니다.
+    val_keys = list(val_acc_list.keys())
+    if keys != val_keys:
+        print("[WARN] train/val 키 순서가 다릅니다. 교집합 기준으로 정렬 없이 맞춥니다.")
+        keys = [k for k in keys if k in val_acc_list]
 
-    # Validation Accuracy
-    val_acc_keys = list(val_acc_list.keys())
-    val_acc_values = list(val_acc_list.values())
-    x_val = np.arange(len(val_acc_keys)) * 2  # 간격 조정
-    
-    plt.figure(figsize=(16, 8))
-    plt.bar(x_val, val_acc_values, width=1.0)
-    plt.xticks(x_val, val_acc_keys)
-    plt.xlabel("Model index")
-    plt.ylabel("Validation Accuracy")  
-    plt.grid(axis='y', linestyle='--', alpha=0.5)
-    plt.title("Validation Accuracy Comparison")
-    plt.tight_layout()
-    os.makedirs("IterationProject/Result/Validation", exist_ok=True)  # 폴더 없으면 생성
-    plt.savefig(f"IterationProject/Result/Validation/Validation_acc_comparison.png", dpi=300)
-    plt.close()
+    # 1) 청크 분할(원래 순서 유지)
+    chunks = [keys[i:i+chunk_size] for i in range(0, len(keys), chunk_size)]
+
+    # 2) 폴더 준비
+    os.makedirs("IterationProject/Result/Training", exist_ok=True)
+    os.makedirs("IterationProject/Result/Validation", exist_ok=True)
+
+    # 3) 파트별 저장
+    for part_idx, keys_chunk in enumerate(chunks, start=1):
+        # ---- Training ----
+        train_vals = [train_acc_list[k] for k in keys_chunk]
+        x = np.arange(len(keys_chunk)) * 2
+
+        plt.figure(figsize=(16, 8))
+        plt.bar(x, train_vals, width=1.0)
+        plt.xticks(x, keys_chunk, rotation=45)
+        plt.xlabel("Model index (global)")
+        plt.ylabel("Training Accuracy")
+        plt.grid(axis='y', linestyle='--', alpha=0.5)
+
+        rng = (keys_chunk[0], keys_chunk[-1])
+        plt.title(f"Training Accuracy Comparison (Part {part_idx}: idx {rng[0]+1}–{rng[1]+1})")
+
+        # 최고값 라벨
+        max_idx = int(np.nanargmax(train_vals))
+        max_val = float(train_vals[max_idx])
+        plt.text(x[max_idx], max_val, f"{max_val:.4f}",
+                 ha='center', va='bottom', fontsize=10, fontweight='bold', color='red')
+
+        plt.tight_layout()
+        plt.savefig(f"IterationProject/Result/Training/Train_part{part_idx}_idx{rng[0]+1}-{rng[1]+1}.png", dpi=300)
+        plt.close()
+
+        # ---- Validation ----
+        val_vals = [val_acc_list[k] for k in keys_chunk]
+        x = np.arange(len(keys_chunk)) * 2
+
+        plt.figure(figsize=(16, 8))
+        plt.bar(x, val_vals, width=1.0)
+        plt.xticks(x, keys_chunk, rotation=45)
+        plt.xlabel("Model index (global)")
+        plt.ylabel("Validation Accuracy")
+        plt.grid(axis='y', linestyle='--', alpha=0.5)
+        plt.title(f"Validation Accuracy Comparison (Part {part_idx}: idx {rng[0]+1}–{rng[1]+1})")
+
+        # 최고값 라벨
+        max_idx = int(np.nanargmax(val_vals))
+        max_val = float(val_vals[max_idx])
+        plt.text(x[max_idx], max_val, f"{max_val:.4f}",
+                 ha='center', va='bottom', fontsize=10, fontweight='bold', color='red')
+
+        plt.tight_layout()
+        plt.savefig(f"IterationProject/Result/Validation/Val_part{part_idx}_idx{rng[0]+1}-{rng[1]+1}.png", dpi=300)
+        plt.close()
