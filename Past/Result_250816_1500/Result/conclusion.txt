@@ -1,0 +1,4 @@
+최고성능: [59번 인덱스]
+	- Training Accuracy: 약 0.99
+	- Validation Accuracy: 0.9918로 Validation Plot에서 1위
+	- [Parameters]: {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}

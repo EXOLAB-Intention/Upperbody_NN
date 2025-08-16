@@ -1,0 +1,80 @@
+#0 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#1 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#2 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#3 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#4 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#5 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#6 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#7 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#8 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#9 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#10 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [64], 'Epoch': 15, 'BatchSize': 16}
+#11 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [64], 'Epoch': 15, 'BatchSize': 64}
+#12 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#13 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#14 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#15 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#16 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#17 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#18 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#19 - {'WindowSize': 10, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#20 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#21 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#22 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#23 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#24 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#25 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#26 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#27 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#28 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#29 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#30 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [64], 'Epoch': 15, 'BatchSize': 16}
+#31 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [64], 'Epoch': 15, 'BatchSize': 64}
+#32 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#33 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#34 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#35 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#36 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#37 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#38 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#39 - {'WindowSize': 10, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#40 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#41 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#42 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#43 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#44 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#45 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#46 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#47 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#48 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#49 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#50 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [64], 'Epoch': 15, 'BatchSize': 16}
+#51 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [64], 'Epoch': 15, 'BatchSize': 64}
+#52 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#53 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#54 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#55 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#56 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#57 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#58 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#59 - {'WindowSize': 90, 'Stride': 1, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#60 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#61 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#62 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#63 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#64 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#65 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#66 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#67 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#68 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#69 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#70 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [64], 'Epoch': 15, 'BatchSize': 16}
+#71 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64], 'Dense_units': [64], 'Epoch': 15, 'BatchSize': 64}
+#72 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#73 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#74 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#75 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
+#76 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 16}
+#77 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32], 'Dense_units': [32], 'Epoch': 15, 'BatchSize': 64}
+#78 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 16}
+#79 - {'WindowSize': 90, 'Stride': 5, 'LearningRate': 0.001, 'Dropout': 0.2, 'LSTM_units': [64, 32, 16], 'Dense_units': [16], 'Epoch': 15, 'BatchSize': 64}
