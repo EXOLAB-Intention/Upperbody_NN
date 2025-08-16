@@ -4,14 +4,14 @@ import itertools
 import os
 
 
-parameters = {"WindowSize":       [50, 90],
-                "Stride":         [1],
+parameters = {"WindowSize":       [10, 20, 30, 40, 50],
+                "Stride":         [1, 5, 10],
                 "LearningRate":   [0.001],
                 "Dropout":        [0.2],
-                "LSTM_units":     [[16], [32], [64], [32, 16], [64, 32], [64, 32, 16]],
-                "Dense_units":    [[16], [32], [64], [32, 16], [64, 32]],
-                "Epoch":          [5, 10],  
-                "BatchSize":      [16, 256]}
+                "LSTM_units":     [[16], [32]],
+                "Dense_units":    [[16]],
+                "Epoch":          [1],  
+                "BatchSize":      [16]}
 
 # 파라미터 이름과 값 목록 분리
 param_keys = list(parameters.keys())
@@ -31,7 +31,7 @@ print(f"총 조합 수: {len(param_list)}")
 # TXT 파일로 파라미터 저장
 os.makedirs("IterationProject/Result", exist_ok=True)
 with open("IterationProject/Result/params_list.txt", "w", encoding="utf-8") as f:
-    for idx, params in enumerate(param_list, start=1):
+    for idx, params in enumerate(param_list):
         f.write(f"#{idx} - {params}\n")
 
 ### Data Loading
@@ -46,16 +46,13 @@ def main():
         # Data Loading
         x_train, y_train_ohe, x_val, y_val_ohe, x_test, y_test_ohe = DataPreprocessing(all_DS, param)
 
-
         # Data Check
         # PlotIMUData(all_DS)
         # CheckTotalData(all_DS)
 
-
         # Data Information Check
         input_shape = x_train.shape[1:]      # (window_size, num_features)
         num_classes = y_train_ohe.shape[1]   # one-hot Label Dimension 
-
 
         # Model
         print(
@@ -70,21 +67,21 @@ def main():
         )
         model, history = TrainingModel(x_train, y_train_ohe, x_val, y_val_ohe, input_shape, num_classes, param)
 
-
         # Save Accuracy
         train_acc_list[
             f"{idx}"] = max(history.history['accuracy'])
 
         val_acc_list[
             f"{idx}"] = max(history.history['val_accuracy'])
-        
 
         # Result
-        PlotAccuracy(history, param, idx+1 , max(history.history['accuracy']), max(history.history['val_accuracy']))
+        PlotAccuracy(history, param, idx, max(history.history['accuracy']), max(history.history['val_accuracy']))
 
     ### Final HyperParameter Comparison
     PlotHyperparamComparison(train_acc_list, val_acc_list, chunk_size=30)
 
+    ### Final Message ###
+    print("\nAll process is DONE !!!")
 
 
 if __name__ == "__main__":

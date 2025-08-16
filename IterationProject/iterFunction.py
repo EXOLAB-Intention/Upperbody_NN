@@ -295,14 +295,14 @@ def PlotHyperparamComparison(train_acc_list, val_acc_list, chunk_size=30):
         x = np.arange(len(keys_chunk)) * 2
 
         plt.figure(figsize=(16, 8))
-        plt.bar(x, train_vals, width=1.0)
+        plt.bar(x, train_vals, width=1.0, color="#000080")
         plt.xticks(x, keys_chunk, rotation=45)
         plt.xlabel("Model index (global)")
         plt.ylabel("Training Accuracy")
         plt.grid(axis='y', linestyle='--', alpha=0.5)
 
         rng = (keys_chunk[0], keys_chunk[-1])
-        plt.title(f"Training Accuracy Comparison (Part {part_idx}: idx {str(rng[0]+1)}–{str(rng[1]+1)})")
+        plt.title(f"Training Accuracy Comparison (Part {part_idx}: idx {rng[0]}–{rng[1]})")
 
         # 최고값 라벨
         max_idx = int(np.nanargmax(train_vals))
@@ -311,7 +311,7 @@ def PlotHyperparamComparison(train_acc_list, val_acc_list, chunk_size=30):
                  ha='center', va='bottom', fontsize=10, fontweight='bold', color='red')
 
         plt.tight_layout()
-        plt.savefig(f"IterationProject/Result/Training/Train_part{part_idx}_idx{str(rng[0]+1)}–{str(rng[1]+1)}.png", dpi=300)
+        plt.savefig(f"IterationProject/Result/Training/Train_part{part_idx}_idx{rng[0]}–{rng[1]}.png", dpi=300)
         plt.close()
 
         # ---- Validation ----
@@ -319,12 +319,12 @@ def PlotHyperparamComparison(train_acc_list, val_acc_list, chunk_size=30):
         x = np.arange(len(keys_chunk)) * 2
 
         plt.figure(figsize=(16, 8))
-        plt.bar(x, val_vals, width=1.0)
+        plt.bar(x, val_vals, width=1.0, color="darkorange")
         plt.xticks(x, keys_chunk, rotation=45)
         plt.xlabel("Model index (global)")
         plt.ylabel("Validation Accuracy")
         plt.grid(axis='y', linestyle='--', alpha=0.5)
-        plt.title(f"Validation Accuracy Comparison (Part {part_idx}: idx {str(rng[0]+1)}–{str(rng[1]+1)})")
+        plt.title(f"Validation Accuracy Comparison (Part {part_idx}: idx {rng[0]}–{rng[1]})")
 
 
         # 최고값 라벨
@@ -334,5 +334,5 @@ def PlotHyperparamComparison(train_acc_list, val_acc_list, chunk_size=30):
                  ha='center', va='bottom', fontsize=10, fontweight='bold', color='red')
 
         plt.tight_layout()
-        plt.savefig(f"IterationProject/Result/Validation/Val_part{part_idx}_idx{str(rng[0]+1)}–{str(rng[1]+1)}.png", dpi=300)
+        plt.savefig(f"IterationProject/Result/Validation/Val_part{part_idx}_idx{rng[0]}–{rng[1]}.png", dpi=300)
         plt.close()
