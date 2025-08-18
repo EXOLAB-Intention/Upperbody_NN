@@ -4,13 +4,13 @@ import itertools
 import os
 
 
-parameters = {"WindowSize":     [10, 20, 30, 40, 50, 60, 70, 80, 90], 
-              "Stride":         [1, 5, 10], 
+parameters = {"WindowSize":     [10, 30, 50, 70, 90], 
+              "Stride":         [1, 10], 
               "LearningRate":   [0.001], 
               "Dropout":        [0.2], 
               "LSTM_units":     [[64], [128], [256], [128, 64], [256, 128], [256, 128, 64]], 
               "Dense_units":    [[16], [32], [64]], 
-              "Epoch":          [15], 
+              "Epoch":          [10, 20, 30], 
               "BatchSize":      [16, 32, 64, 128]}
 
 # 파라미터 이름과 값 목록 분리
